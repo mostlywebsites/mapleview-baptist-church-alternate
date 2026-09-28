@@ -27,12 +27,11 @@
     <sc-if value="{{ heroD }}" hint-placeholder-val="{{ false }}"><img src="assets/photos/Congregation-1.jpg" alt="Congregation worshiping at Mapleview" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 35%;"></sc-if>
     <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,12,9,0.6) 0%, rgba(10,12,9,0.3) 30%, rgba(10,12,9,0.6) 55%, rgba(10,12,9,0.9) 100%);"></div>
 
-    <div style="position:absolute; right:16px; top:50%; transform:translateY(-50%); z-index:2; display:flex; flex-direction:column; gap:4px; padding:6px; border-radius:18px; background:rgba(10,12,9,0.4); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid rgba(243,238,227,0.2);">
-      <div style="font-size:10.5px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:rgba(243,238,227,0.7); padding:4px 8px 2px;">Hero photo</div>
-      <button onClick="{{ pickA }}" style="{{ btnA }}">Hands raised</button>
-      <button onClick="{{ pickB }}" style="{{ btnB }}">Sanctuary</button>
-      <button onClick="{{ pickC }}" style="{{ btnC }}">Worship team</button>
-      <button onClick="{{ pickD }}" style="{{ btnD }}">Congregation</button>
+    <div style="position:absolute; right:16px; top:50%; transform:translateY(-50%); z-index:3; display:flex; flex-direction:column; gap:4px; padding:4px; border-radius:999px; background:rgba(10,12,9,0.32); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid rgba(243,238,227,0.18);">
+      <button onClick="{{ heroPick0 }}" style="{{ heroBtn0 }}" title="Photo 1">1</button>
+      <button onClick="{{ heroPick1 }}" style="{{ heroBtn1 }}" title="Photo 2">2</button>
+      <button onClick="{{ heroPick2 }}" style="{{ heroBtn2 }}" title="Photo 3">3</button>
+      <button onClick="{{ heroPick3 }}" style="{{ heroBtn3 }}" title="Photo 4">4</button>
     </div>
     <sc-if value="{{ showAnnouncement }}" hint-placeholder-val="{{ true }}">
       <div style="position:relative; background:#C9A36A; color:#111410; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; display:flex; justify-content:center; gap:14px; flex-wrap:wrap; padding:9px 20px;">
@@ -55,7 +54,7 @@
       </div>
     </div>
 
-    <div style="position:relative; flex:1; display:flex; flex-direction:column; justify-content:flex-end; padding:0 clamp(20px, 4vw, 56px) clamp(28px, 4vw, 48px);">
+    <div style="position:relative; flex:1; display:flex; flex-direction:column; justify-content:flex-end; padding:0 max(72px, clamp(20px, 4vw, 56px)) clamp(28px, 4vw, 48px) clamp(20px, 4vw, 56px);">
       <div style="font-size:13px; font-weight:800; letter-spacing:0.16em; text-transform:uppercase; color:#F3EEE3; margin-bottom:18px;">Mapleview Baptist Church · Lakeside, CA</div>
       <h1 style="font-weight:900; font-stretch:72%; text-transform:uppercase; font-size:clamp(44px, 6.4vw, 104px); line-height:0.9; letter-spacing:-0.005em; margin:0; display:flex; flex-direction:column;"><span>Discover God.</span><span>Walk fearlessly.</span><span style="color:#C9A36A;">Share His love.</span></h1>
       <div style="display:flex; justify-content:space-between; align-items:end; gap:28px; flex-wrap:wrap; margin-top:clamp(24px, 3vw, 40px); padding-top:24px; border-top:1px solid rgba(243,238,227,0.3);">
@@ -148,9 +147,15 @@
 
   <!-- sermon: full-bleed -->
   <div style="position:relative; color:#F3EEE3; overflow:hidden; margin-top:4px;">
-    <img src="assets/photos/Preaching-1.jpg" alt="Pastor teaching" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%;">
+    <sc-if value="{{ serA }}" hint-placeholder-val="{{ true }}"><img src="assets/photos/Preaching-4.jpg" alt="Pastor teaching" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:60% 35%;"></sc-if>
+    <sc-if value="{{ serB }}" hint-placeholder-val="{{ false }}"><img src="assets/photos/Preaching-3.jpg" alt="Pastor teaching" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%;"></sc-if>
+    
+    <div style="position:absolute; right:16px; top:50%; transform:translateY(-50%); z-index:3; display:flex; flex-direction:column; gap:4px; padding:4px; border-radius:999px; background:rgba(10,12,9,0.32); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid rgba(243,238,227,0.18);">
+      <button onClick="{{ serPick0 }}" style="{{ serBtn0 }}" title="Photo 1">1</button>
+      <button onClick="{{ serPick1 }}" style="{{ serBtn1 }}" title="Photo 2">2</button>
+    </div>
     <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(10,12,9,0.92) 0%, rgba(10,12,9,0.78) 45%, rgba(10,12,9,0.35) 100%);"></div>
-    <div style="position:relative; padding:clamp(64px, 8vw, 120px) clamp(20px, 4vw, 56px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap:clamp(36px, 5vw, 72px); align-items:end;">
+    <div style="position:relative; padding:clamp(64px, 8vw, 120px) max(72px, clamp(20px, 4vw, 56px)) clamp(64px, 8vw, 120px) clamp(20px, 4vw, 56px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap:clamp(36px, 5vw, 72px); align-items:end;">
       <div>
         <div style="font-size:13px; font-weight:800; letter-spacing:0.16em; text-transform:uppercase; color:#C9A36A; margin-bottom:16px;">Latest message</div>
         <h2 style="font-weight:900; font-stretch:72%; text-transform:uppercase; font-size:clamp(40px, 4.8vw, 76px); line-height:0.9; margin:0 0 16px;">Marching Orders</h2>
@@ -224,18 +229,16 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;heroPhoto&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Hands raised&quot;,&quot;Sanctuary&quot;,&quot;Worship team&quot;,&quot;Congregation&quot;],&quot;default&quot;:&quot;Hands raised&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showAnnouncement&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
 class Component extends DCLogic {
-  state = { hero: null };
+  state = { hero: null, ser: 0 };
   renderVals() {
     const names = ['Hands raised', 'Sanctuary', 'Worship team', 'Congregation'];
-    const hero = this.state.hero || (names.includes(this.props.heroPhoto) ? this.props.heroPhoto : 'Hands raised');
-    const btn = (on) => ({ appearance: 'none', cursor: 'pointer', border: 0, textAlign: 'left', borderRadius: 12, padding: '8px 12px', font: "700 12.5px 'Archivo',sans-serif", letterSpacing: '0.04em', background: on ? '#F3EEE3' : 'transparent', color: on ? '#111410' : '#F3EEE3' });
-    const pick = (n) => () => this.setState({ hero: n });
-    return {
-      showAnnouncement: this.props.showAnnouncement ?? true,
-      heroA: hero === names[0], heroB: hero === names[1], heroC: hero === names[2], heroD: hero === names[3],
-      btnA: btn(hero === names[0]), btnB: btn(hero === names[1]), btnC: btn(hero === names[2]), btnD: btn(hero === names[3]),
-      pickA: pick(names[0]), pickB: pick(names[1]), pickC: pick(names[2]), pickD: pick(names[3])
-    };
+    const hi = this.state.hero ?? Math.max(0, names.indexOf(this.props.heroPhoto));
+    const si = this.state.ser;
+    const btn = (on) => ({ appearance: 'none', cursor: 'pointer', border: 0, width: 30, height: 30, borderRadius: 999, font: "800 12.5px 'Archivo',sans-serif", background: on ? '#F3EEE3' : 'transparent', color: on ? '#111410' : 'rgba(243,238,227,0.85)' });
+    const v = { showAnnouncement: this.props.showAnnouncement ?? true };
+    ['A','B','C','D'].forEach((L, i) => { v['hero' + L] = hi === i; v['heroBtn' + i] = btn(hi === i); v['heroPick' + i] = () => this.setState({ hero: i }); });
+    ['A','B'].forEach((L, i) => { v['ser' + L] = si === i; v['serBtn' + i] = btn(si === i); v['serPick' + i] = () => this.setState({ ser: i }); });
+    return v;
   }
 }
 </script>
